@@ -1,16 +1,51 @@
-# serverless.yml
+# # serverless.yml
 
-service: my-express-application
+# service: my-express-application
 
+# provider:
+#   name: aws
+#   runtime: nodejs6.10
+#   stage: dev
+#   region: us-east-1
+
+# functions:
+#   app:
+#     handler: index.handler
+#     events:
+#       - http: ANY /
+#       - http: 'ANY {proxy+}'
+
+# service: apollo-lambda
+# provider:
+#   name: aws
+#   runtime: nodejs6.10
+#   region: us-east-1
+#   stage: development
+# functions:
+#   graphql:
+#     handler: handler.graphql
+#     events:
+#       - http:
+#           path: graphql
+#           method: post
+#           cors: true
+#   graphiql:
+#     handler: handler.graphiql
+#     events:
+#       - http:
+#           path: graphiql
+#           method: get
+
+service: apollo-lambda
 provider:
   name: aws
   runtime: nodejs6.10
-  stage: dev
-  region: us-east-1
-
 functions:
-  app:
-    handler: index.handler
+  graphql:
+    # this is formatted as <FILENAME>.<HANDLER>
+    handler: graphql.graphqlHandler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http:
+          path: graphql
+          method: post
+          cors: true
