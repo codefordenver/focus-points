@@ -10,11 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-lambda": "^2.4.6",
-    "express": "^4.16.4",
-    "graphql": "^14.1.1",
-    "graphql-tools": "^4.0.4",
-    "lodash": "^4.17.11",
-    "serverless-http": "^1.9.1"
+    "express": "^4.16.4"
   }
 }
