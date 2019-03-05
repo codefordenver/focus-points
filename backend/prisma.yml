@@ -1,6 +1,6 @@
-endpoint: https://us1.prisma.sh/cody-taft/focus-points/dev
-datamodel: datamodel.prisma
+endpoint: http://localhost:4466
+datamodel: datamodel.graphql
 
-generate:
-  - generator: javascript-client
-    output: ./generated/prisma-client/
+# generate:
+#   - generator: javascript-client
+#     output: ./generated/prisma-client/
