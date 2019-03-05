@@ -2,3 +2,35 @@ type User {
   id: ID! @unique
   name: String!
 }
+
+type Phrase {
+  id: ID! @unique
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+type Category {
+  id: ID! @unique
+  name: String!
+}
+
+type Difficulty {
+  id: ID! @unique
+  difficulty_level: String!
+}
+
+type SubCategory {
+  id: ID! @unique
+  subcategory: String!
+  categoryID: Int!
+}
+
+type Vocab {
+  id: ID! @unique
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
