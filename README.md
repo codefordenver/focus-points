@@ -7,3 +7,5 @@
 ### The Front-End is built in React.
 
 ### The Back-End is a GraphQl postgres database utilizing Prisma and GraphQL-Yoga.
+
+[Flow Dock](https://www.flowdock.com/app/cfa-brigades/focus-points)
