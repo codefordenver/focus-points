@@ -1,3 +1,5 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/codefordenver/focus-points.svg?columns=all)](https://waffle.io/codefordenver/focus-points)
+
 # Focus-Points
 
 ### Focus-Points is a language application for the non-profit of the same name. It is inspired by Duolingo, but focuses on Constructor working language specficially in the electrical engineering industry.  It will be English - Spanish at first.
