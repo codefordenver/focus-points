@@ -10,7 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
-    "serverless-http": "^1.9.1"
+    "express": "^4.16.4"
   }
 }
