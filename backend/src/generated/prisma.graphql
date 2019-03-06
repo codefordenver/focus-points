@@ -1,0 +1,1463 @@
+# source: http://localhost:4466
+# timestamp: Mon Mar 04 2019 20:49:35 GMT-0700 (MST)
+
+type AggregateCategory {
+  count: Int!
+}
+
+type AggregateDifficulty {
+  count: Int!
+}
+
+type AggregatePhrase {
+  count: Int!
+}
+
+type AggregateSubCategory {
+  count: Int!
+}
+
+type AggregateUser {
+  count: Int!
+}
+
+type AggregateVocab {
+  count: Int!
+}
+
+type BatchPayload {
+  """The number of nodes that have been affected by the Batch operation."""
+  count: Long!
+}
+
+type Category implements Node {
+  id: ID!
+  name: String!
+}
+
+"""A connection to a list of items."""
+type CategoryConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CategoryEdge]!
+  aggregate: AggregateCategory!
+}
+
+input CategoryCreateInput {
+  name: String!
+}
+
+"""An edge in a connection."""
+type CategoryEdge {
+  """The item at the end of the edge."""
+  node: Category!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum CategoryOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type CategoryPreviousValues {
+  id: ID!
+  name: String!
+}
+
+type CategorySubscriptionPayload {
+  mutation: MutationType!
+  node: Category
+  updatedFields: [String!]
+  previousValues: CategoryPreviousValues
+}
+
+input CategorySubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CategorySubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CategorySubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CategorySubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: CategoryWhereInput
+}
+
+input CategoryUpdateInput {
+  name: String
+}
+
+input CategoryWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CategoryWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CategoryWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CategoryWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+}
+
+input CategoryWhereUniqueInput {
+  id: ID
+}
+
+type Difficulty implements Node {
+  id: ID!
+  difficulty_level: String!
+}
+
+"""A connection to a list of items."""
+type DifficultyConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [DifficultyEdge]!
+  aggregate: AggregateDifficulty!
+}
+
+input DifficultyCreateInput {
+  difficulty_level: String!
+}
+
+"""An edge in a connection."""
+type DifficultyEdge {
+  """The item at the end of the edge."""
+  node: Difficulty!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum DifficultyOrderByInput {
+  id_ASC
+  id_DESC
+  difficulty_level_ASC
+  difficulty_level_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type DifficultyPreviousValues {
+  id: ID!
+  difficulty_level: String!
+}
+
+type DifficultySubscriptionPayload {
+  mutation: MutationType!
+  node: Difficulty
+  updatedFields: [String!]
+  previousValues: DifficultyPreviousValues
+}
+
+input DifficultySubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [DifficultySubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [DifficultySubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [DifficultySubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: DifficultyWhereInput
+}
+
+input DifficultyUpdateInput {
+  difficulty_level: String
+}
+
+input DifficultyWhereInput {
+  """Logical AND on all given filters."""
+  AND: [DifficultyWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [DifficultyWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [DifficultyWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  difficulty_level: String
+
+  """All values that are not equal to given value."""
+  difficulty_level_not: String
+
+  """All values that are contained in given list."""
+  difficulty_level_in: [String!]
+
+  """All values that are not contained in given list."""
+  difficulty_level_not_in: [String!]
+
+  """All values less than the given value."""
+  difficulty_level_lt: String
+
+  """All values less than or equal the given value."""
+  difficulty_level_lte: String
+
+  """All values greater than the given value."""
+  difficulty_level_gt: String
+
+  """All values greater than or equal the given value."""
+  difficulty_level_gte: String
+
+  """All values containing the given string."""
+  difficulty_level_contains: String
+
+  """All values not containing the given string."""
+  difficulty_level_not_contains: String
+
+  """All values starting with the given string."""
+  difficulty_level_starts_with: String
+
+  """All values not starting with the given string."""
+  difficulty_level_not_starts_with: String
+
+  """All values ending with the given string."""
+  difficulty_level_ends_with: String
+
+  """All values not ending with the given string."""
+  difficulty_level_not_ends_with: String
+}
+
+input DifficultyWhereUniqueInput {
+  id: ID
+}
+
+"""
+The `Long` scalar type represents non-fractional signed whole numeric values.
+Long can represent values between -(2^63) and 2^63 - 1.
+"""
+scalar Long
+
+type Mutation {
+  createUser(data: UserCreateInput!): User!
+  createPhrase(data: PhraseCreateInput!): Phrase!
+  createCategory(data: CategoryCreateInput!): Category!
+  createDifficulty(data: DifficultyCreateInput!): Difficulty!
+  createSubCategory(data: SubCategoryCreateInput!): SubCategory!
+  createVocab(data: VocabCreateInput!): Vocab!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updatePhrase(data: PhraseUpdateInput!, where: PhraseWhereUniqueInput!): Phrase
+  updateCategory(data: CategoryUpdateInput!, where: CategoryWhereUniqueInput!): Category
+  updateDifficulty(data: DifficultyUpdateInput!, where: DifficultyWhereUniqueInput!): Difficulty
+  updateSubCategory(data: SubCategoryUpdateInput!, where: SubCategoryWhereUniqueInput!): SubCategory
+  updateVocab(data: VocabUpdateInput!, where: VocabWhereUniqueInput!): Vocab
+  deleteUser(where: UserWhereUniqueInput!): User
+  deletePhrase(where: PhraseWhereUniqueInput!): Phrase
+  deleteCategory(where: CategoryWhereUniqueInput!): Category
+  deleteDifficulty(where: DifficultyWhereUniqueInput!): Difficulty
+  deleteSubCategory(where: SubCategoryWhereUniqueInput!): SubCategory
+  deleteVocab(where: VocabWhereUniqueInput!): Vocab
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  upsertPhrase(where: PhraseWhereUniqueInput!, create: PhraseCreateInput!, update: PhraseUpdateInput!): Phrase!
+  upsertCategory(where: CategoryWhereUniqueInput!, create: CategoryCreateInput!, update: CategoryUpdateInput!): Category!
+  upsertDifficulty(where: DifficultyWhereUniqueInput!, create: DifficultyCreateInput!, update: DifficultyUpdateInput!): Difficulty!
+  upsertSubCategory(where: SubCategoryWhereUniqueInput!, create: SubCategoryCreateInput!, update: SubCategoryUpdateInput!): SubCategory!
+  upsertVocab(where: VocabWhereUniqueInput!, create: VocabCreateInput!, update: VocabUpdateInput!): Vocab!
+  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput): BatchPayload!
+  updateManyPhrases(data: PhraseUpdateInput!, where: PhraseWhereInput): BatchPayload!
+  updateManyCategories(data: CategoryUpdateInput!, where: CategoryWhereInput): BatchPayload!
+  updateManyDifficulties(data: DifficultyUpdateInput!, where: DifficultyWhereInput): BatchPayload!
+  updateManySubCategories(data: SubCategoryUpdateInput!, where: SubCategoryWhereInput): BatchPayload!
+  updateManyVocabs(data: VocabUpdateInput!, where: VocabWhereInput): BatchPayload!
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyPhrases(where: PhraseWhereInput): BatchPayload!
+  deleteManyCategories(where: CategoryWhereInput): BatchPayload!
+  deleteManyDifficulties(where: DifficultyWhereInput): BatchPayload!
+  deleteManySubCategories(where: SubCategoryWhereInput): BatchPayload!
+  deleteManyVocabs(where: VocabWhereInput): BatchPayload!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type Phrase implements Node {
+  id: ID!
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+"""A connection to a list of items."""
+type PhraseConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [PhraseEdge]!
+  aggregate: AggregatePhrase!
+}
+
+input PhraseCreateInput {
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+"""An edge in a connection."""
+type PhraseEdge {
+  """The item at the end of the edge."""
+  node: Phrase!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum PhraseOrderByInput {
+  id_ASC
+  id_DESC
+  english_ASC
+  english_DESC
+  spanish_ASC
+  spanish_DESC
+  subcategoryID_ASC
+  subcategoryID_DESC
+  difficultyID_ASC
+  difficultyID_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type PhrasePreviousValues {
+  id: ID!
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+type PhraseSubscriptionPayload {
+  mutation: MutationType!
+  node: Phrase
+  updatedFields: [String!]
+  previousValues: PhrasePreviousValues
+}
+
+input PhraseSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [PhraseSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [PhraseSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [PhraseSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: PhraseWhereInput
+}
+
+input PhraseUpdateInput {
+  english: String
+  spanish: String
+  subcategoryID: Int
+  difficultyID: Int
+}
+
+input PhraseWhereInput {
+  """Logical AND on all given filters."""
+  AND: [PhraseWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [PhraseWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [PhraseWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  english: String
+
+  """All values that are not equal to given value."""
+  english_not: String
+
+  """All values that are contained in given list."""
+  english_in: [String!]
+
+  """All values that are not contained in given list."""
+  english_not_in: [String!]
+
+  """All values less than the given value."""
+  english_lt: String
+
+  """All values less than or equal the given value."""
+  english_lte: String
+
+  """All values greater than the given value."""
+  english_gt: String
+
+  """All values greater than or equal the given value."""
+  english_gte: String
+
+  """All values containing the given string."""
+  english_contains: String
+
+  """All values not containing the given string."""
+  english_not_contains: String
+
+  """All values starting with the given string."""
+  english_starts_with: String
+
+  """All values not starting with the given string."""
+  english_not_starts_with: String
+
+  """All values ending with the given string."""
+  english_ends_with: String
+
+  """All values not ending with the given string."""
+  english_not_ends_with: String
+  spanish: String
+
+  """All values that are not equal to given value."""
+  spanish_not: String
+
+  """All values that are contained in given list."""
+  spanish_in: [String!]
+
+  """All values that are not contained in given list."""
+  spanish_not_in: [String!]
+
+  """All values less than the given value."""
+  spanish_lt: String
+
+  """All values less than or equal the given value."""
+  spanish_lte: String
+
+  """All values greater than the given value."""
+  spanish_gt: String
+
+  """All values greater than or equal the given value."""
+  spanish_gte: String
+
+  """All values containing the given string."""
+  spanish_contains: String
+
+  """All values not containing the given string."""
+  spanish_not_contains: String
+
+  """All values starting with the given string."""
+  spanish_starts_with: String
+
+  """All values not starting with the given string."""
+  spanish_not_starts_with: String
+
+  """All values ending with the given string."""
+  spanish_ends_with: String
+
+  """All values not ending with the given string."""
+  spanish_not_ends_with: String
+  subcategoryID: Int
+
+  """All values that are not equal to given value."""
+  subcategoryID_not: Int
+
+  """All values that are contained in given list."""
+  subcategoryID_in: [Int!]
+
+  """All values that are not contained in given list."""
+  subcategoryID_not_in: [Int!]
+
+  """All values less than the given value."""
+  subcategoryID_lt: Int
+
+  """All values less than or equal the given value."""
+  subcategoryID_lte: Int
+
+  """All values greater than the given value."""
+  subcategoryID_gt: Int
+
+  """All values greater than or equal the given value."""
+  subcategoryID_gte: Int
+  difficultyID: Int
+
+  """All values that are not equal to given value."""
+  difficultyID_not: Int
+
+  """All values that are contained in given list."""
+  difficultyID_in: [Int!]
+
+  """All values that are not contained in given list."""
+  difficultyID_not_in: [Int!]
+
+  """All values less than the given value."""
+  difficultyID_lt: Int
+
+  """All values less than or equal the given value."""
+  difficultyID_lte: Int
+
+  """All values greater than the given value."""
+  difficultyID_gt: Int
+
+  """All values greater than or equal the given value."""
+  difficultyID_gte: Int
+}
+
+input PhraseWhereUniqueInput {
+  id: ID
+}
+
+type Query {
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  phrases(where: PhraseWhereInput, orderBy: PhraseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Phrase]!
+  categories(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Category]!
+  difficulties(where: DifficultyWhereInput, orderBy: DifficultyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Difficulty]!
+  subCategories(where: SubCategoryWhereInput, orderBy: SubCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SubCategory]!
+  vocabs(where: VocabWhereInput, orderBy: VocabOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Vocab]!
+  user(where: UserWhereUniqueInput!): User
+  phrase(where: PhraseWhereUniqueInput!): Phrase
+  category(where: CategoryWhereUniqueInput!): Category
+  difficulty(where: DifficultyWhereUniqueInput!): Difficulty
+  subCategory(where: SubCategoryWhereUniqueInput!): SubCategory
+  vocab(where: VocabWhereUniqueInput!): Vocab
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  phrasesConnection(where: PhraseWhereInput, orderBy: PhraseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PhraseConnection!
+  categoriesConnection(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CategoryConnection!
+  difficultiesConnection(where: DifficultyWhereInput, orderBy: DifficultyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DifficultyConnection!
+  subCategoriesConnection(where: SubCategoryWhereInput, orderBy: SubCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SubCategoryConnection!
+  vocabsConnection(where: VocabWhereInput, orderBy: VocabOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): VocabConnection!
+
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+}
+
+type SubCategory implements Node {
+  id: ID!
+  subcategory: String!
+  categoryID: Int!
+}
+
+"""A connection to a list of items."""
+type SubCategoryConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SubCategoryEdge]!
+  aggregate: AggregateSubCategory!
+}
+
+input SubCategoryCreateInput {
+  subcategory: String!
+  categoryID: Int!
+}
+
+"""An edge in a connection."""
+type SubCategoryEdge {
+  """The item at the end of the edge."""
+  node: SubCategory!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SubCategoryOrderByInput {
+  id_ASC
+  id_DESC
+  subcategory_ASC
+  subcategory_DESC
+  categoryID_ASC
+  categoryID_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type SubCategoryPreviousValues {
+  id: ID!
+  subcategory: String!
+  categoryID: Int!
+}
+
+type SubCategorySubscriptionPayload {
+  mutation: MutationType!
+  node: SubCategory
+  updatedFields: [String!]
+  previousValues: SubCategoryPreviousValues
+}
+
+input SubCategorySubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SubCategorySubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SubCategorySubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SubCategorySubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SubCategoryWhereInput
+}
+
+input SubCategoryUpdateInput {
+  subcategory: String
+  categoryID: Int
+}
+
+input SubCategoryWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SubCategoryWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SubCategoryWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SubCategoryWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  subcategory: String
+
+  """All values that are not equal to given value."""
+  subcategory_not: String
+
+  """All values that are contained in given list."""
+  subcategory_in: [String!]
+
+  """All values that are not contained in given list."""
+  subcategory_not_in: [String!]
+
+  """All values less than the given value."""
+  subcategory_lt: String
+
+  """All values less than or equal the given value."""
+  subcategory_lte: String
+
+  """All values greater than the given value."""
+  subcategory_gt: String
+
+  """All values greater than or equal the given value."""
+  subcategory_gte: String
+
+  """All values containing the given string."""
+  subcategory_contains: String
+
+  """All values not containing the given string."""
+  subcategory_not_contains: String
+
+  """All values starting with the given string."""
+  subcategory_starts_with: String
+
+  """All values not starting with the given string."""
+  subcategory_not_starts_with: String
+
+  """All values ending with the given string."""
+  subcategory_ends_with: String
+
+  """All values not ending with the given string."""
+  subcategory_not_ends_with: String
+  categoryID: Int
+
+  """All values that are not equal to given value."""
+  categoryID_not: Int
+
+  """All values that are contained in given list."""
+  categoryID_in: [Int!]
+
+  """All values that are not contained in given list."""
+  categoryID_not_in: [Int!]
+
+  """All values less than the given value."""
+  categoryID_lt: Int
+
+  """All values less than or equal the given value."""
+  categoryID_lte: Int
+
+  """All values greater than the given value."""
+  categoryID_gt: Int
+
+  """All values greater than or equal the given value."""
+  categoryID_gte: Int
+}
+
+input SubCategoryWhereUniqueInput {
+  id: ID
+}
+
+type Subscription {
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  phrase(where: PhraseSubscriptionWhereInput): PhraseSubscriptionPayload
+  category(where: CategorySubscriptionWhereInput): CategorySubscriptionPayload
+  difficulty(where: DifficultySubscriptionWhereInput): DifficultySubscriptionPayload
+  subCategory(where: SubCategorySubscriptionWhereInput): SubCategorySubscriptionPayload
+  vocab(where: VocabSubscriptionWhereInput): VocabSubscriptionPayload
+}
+
+type User implements Node {
+  id: ID!
+  name: String!
+}
+
+"""A connection to a list of items."""
+type UserConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [UserEdge]!
+  aggregate: AggregateUser!
+}
+
+input UserCreateInput {
+  name: String!
+}
+
+"""An edge in a connection."""
+type UserEdge {
+  """The item at the end of the edge."""
+  node: User!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum UserOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type UserPreviousValues {
+  id: ID!
+  name: String!
+}
+
+type UserSubscriptionPayload {
+  mutation: MutationType!
+  node: User
+  updatedFields: [String!]
+  previousValues: UserPreviousValues
+}
+
+input UserSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [UserSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [UserSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [UserSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: UserWhereInput
+}
+
+input UserUpdateInput {
+  name: String
+}
+
+input UserWhereInput {
+  """Logical AND on all given filters."""
+  AND: [UserWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [UserWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [UserWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+}
+
+input UserWhereUniqueInput {
+  id: ID
+}
+
+type Vocab implements Node {
+  id: ID!
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+"""A connection to a list of items."""
+type VocabConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [VocabEdge]!
+  aggregate: AggregateVocab!
+}
+
+input VocabCreateInput {
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+"""An edge in a connection."""
+type VocabEdge {
+  """The item at the end of the edge."""
+  node: Vocab!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum VocabOrderByInput {
+  id_ASC
+  id_DESC
+  english_ASC
+  english_DESC
+  spanish_ASC
+  spanish_DESC
+  subcategoryID_ASC
+  subcategoryID_DESC
+  difficultyID_ASC
+  difficultyID_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type VocabPreviousValues {
+  id: ID!
+  english: String!
+  spanish: String!
+  subcategoryID: Int!
+  difficultyID: Int!
+}
+
+type VocabSubscriptionPayload {
+  mutation: MutationType!
+  node: Vocab
+  updatedFields: [String!]
+  previousValues: VocabPreviousValues
+}
+
+input VocabSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [VocabSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [VocabSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [VocabSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: VocabWhereInput
+}
+
+input VocabUpdateInput {
+  english: String
+  spanish: String
+  subcategoryID: Int
+  difficultyID: Int
+}
+
+input VocabWhereInput {
+  """Logical AND on all given filters."""
+  AND: [VocabWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [VocabWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [VocabWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  english: String
+
+  """All values that are not equal to given value."""
+  english_not: String
+
+  """All values that are contained in given list."""
+  english_in: [String!]
+
+  """All values that are not contained in given list."""
+  english_not_in: [String!]
+
+  """All values less than the given value."""
+  english_lt: String
+
+  """All values less than or equal the given value."""
+  english_lte: String
+
+  """All values greater than the given value."""
+  english_gt: String
+
+  """All values greater than or equal the given value."""
+  english_gte: String
+
+  """All values containing the given string."""
+  english_contains: String
+
+  """All values not containing the given string."""
+  english_not_contains: String
+
+  """All values starting with the given string."""
+  english_starts_with: String
+
+  """All values not starting with the given string."""
+  english_not_starts_with: String
+
+  """All values ending with the given string."""
+  english_ends_with: String
+
+  """All values not ending with the given string."""
+  english_not_ends_with: String
+  spanish: String
+
+  """All values that are not equal to given value."""
+  spanish_not: String
+
+  """All values that are contained in given list."""
+  spanish_in: [String!]
+
+  """All values that are not contained in given list."""
+  spanish_not_in: [String!]
+
+  """All values less than the given value."""
+  spanish_lt: String
+
+  """All values less than or equal the given value."""
+  spanish_lte: String
+
+  """All values greater than the given value."""
+  spanish_gt: String
+
+  """All values greater than or equal the given value."""
+  spanish_gte: String
+
+  """All values containing the given string."""
+  spanish_contains: String
+
+  """All values not containing the given string."""
+  spanish_not_contains: String
+
+  """All values starting with the given string."""
+  spanish_starts_with: String
+
+  """All values not starting with the given string."""
+  spanish_not_starts_with: String
+
+  """All values ending with the given string."""
+  spanish_ends_with: String
+
+  """All values not ending with the given string."""
+  spanish_not_ends_with: String
+  subcategoryID: Int
+
+  """All values that are not equal to given value."""
+  subcategoryID_not: Int
+
+  """All values that are contained in given list."""
+  subcategoryID_in: [Int!]
+
+  """All values that are not contained in given list."""
+  subcategoryID_not_in: [Int!]
+
+  """All values less than the given value."""
+  subcategoryID_lt: Int
+
+  """All values less than or equal the given value."""
+  subcategoryID_lte: Int
+
+  """All values greater than the given value."""
+  subcategoryID_gt: Int
+
+  """All values greater than or equal the given value."""
+  subcategoryID_gte: Int
+  difficultyID: Int
+
+  """All values that are not equal to given value."""
+  difficultyID_not: Int
+
+  """All values that are contained in given list."""
+  difficultyID_in: [Int!]
+
+  """All values that are not contained in given list."""
+  difficultyID_not_in: [Int!]
+
+  """All values less than the given value."""
+  difficultyID_lt: Int
+
+  """All values less than or equal the given value."""
+  difficultyID_lte: Int
+
+  """All values greater than the given value."""
+  difficultyID_gt: Int
+
+  """All values greater than or equal the given value."""
+  difficultyID_gte: Int
+}
+
+input VocabWhereUniqueInput {
+  id: ID
+}

@@ -1,0 +1,10 @@
+# import User from './generated/prisma.graphql'
+
+type Query {
+  user(id: ID!): User
+}
+
+type Mutation {
+    createUser(name: String!): User!
+
+}
